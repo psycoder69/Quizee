@@ -1,0 +1,93 @@
+/* css applied to footer */
+
+footer {
+    width: 100%;
+    font-size: 0.875rem;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    place-content: center;
+    color: var(--inactive-footer-link);
+    background: var(--header-footer-color);
+    border-radius: 1rem 1rem 0 0;
+    padding: 1rem 0;
+}
+
+#middle-link {
+    display: flex;
+    place-items: center;
+}
+
+#middle-link > a {
+    margin: 0 1rem;
+}
+
+.footer-links {
+    width: 100%;
+    display: flex;
+    place-items: center;
+    justify-content: space-around;
+}
+
+.links {
+    font-size: 0.875rem;
+}
+
+.links:hover {
+    cursor: pointer;
+    color: var(--active-footer-link);
+}
+
+.fa-heart {
+    font-size: 1rem;
+    color: #e62020;
+    cursor: pointer;
+    margin: 0 0.125rem;
+}
+
+#creator {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+#creator:hover {
+    color: var(--base-color);
+    text-decoration: underline;
+}
+
+/* media query for responsiveness */
+
+@media only screen and (max-width: 1200px) {
+    footer {
+        padding: 0.5rem 0;
+    }
+
+    .footer-links {
+        flex-direction: column;
+    }
+
+    .footer-links > div {
+        margin: 0.75rem 0;
+    }
+
+    #middle-link {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    #middle-link > a {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    #middle-link {
+        flex-direction: column;
+    }
+
+    #middle-link > a {
+        margin: 0.25rem 0;
+    }
+}

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Quizee - Test your knowledge </title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/question.css">
+    <link rel="stylesheet" href="../css/result.css">
+
+    <script src="https://kit.fontawesome.com/7748f3a2f4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- header of the app -->
+    <header>
+        <nav>
+            <div></div>
+
+            <!-- logo & title of the quiz app -->
+            <div>
+                <i class="fa-solid fa-graduation-cap header-icon"></i>
+                <h1 id="heading-1"> Quizee </h1>
+            </div>
+
+            <!-- icon button for switching between light & dark themes -->
+            <div>
+                <i class="fa-solid fa-sun" title="Activate Light Mode"></i>
+                <i class="fa-solid fa-moon" title="Activate Dark Mode"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- home page -->
+        <section id="home">
+            <!-- input field to take username as input from user -->
+            <input type="text" placeholder="Enter your name" maxlength="15" autocomplete="off" autofocus>
+            
+            <h1 id="heading-2"> Select a Category </h1>
+
+            <!-- quiz category container to choose the type of quiz -->
+            <div id="category-container">
+                <button class="category option temp">
+                    Arithmetic Aptitude
+                </button>
+                <button class="category option temp">
+                    Logical Reasoning
+                </button>
+                <button class="category option temp">
+                    General Knowledge
+                </button>
+                <button class="category option temp"> English Grammar </button>
+            </div>
+
+            <!-- button to start quiz after selecting category -->
+            <button class="start" disabled>
+                Start Quiz
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </section>
+
+        <!-- contains questions & options from the selected category -->
+        <section id="content">
+            <div id="quiz-info">
+                <!-- question category container -->
+                <h3 id="question-category"></h3>
+
+                <!-- question number container -->
+                <div id="question-number"> 1 </div>
+
+                <!-- quiz countdown timer -->
+                <div id="timer-box">
+                    <span> Time left: </span>
+                    <div id="timer"> -- : -- </div>
+                </div>
+            </div>
+
+            <!-- question container -->
+            <div id="question"></div>
+
+            <!-- options for the given question -->
+            <div id="answer-container">
+                <button class="answer option temp" id="first"></button>
+                <button class="answer option temp" id="second"></button>
+                <button class="answer option temp" id="third"></button>
+                <button class="answer option temp" id="fourth"></button>
+            </div>
+
+            <div id="navigate">
+                <!-- previous button -->
+                <button class="navigate-button active-navigate" id="previous">
+                    <i class="fa-solid fa-arrow-left-long"></i>
+                    Previous
+                </button>
+
+                <!-- finish button -->
+                <button class="navigate-button" id="finish" disabled>
+                    Finish
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </button>
+
+                <!-- next button -->
+                <button class="navigate-button active-navigate" id="next">
+                    Next
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- section to show result after quiz ends -->
+        <section id="quiz-result">
+            <div id="result-container">
+                <h2 id="result-heading"> Quiz Results </h2>
+
+                <div id="result">
+                    <div id="visual">
+                        <!-- pie-chart to show result of the quiz -->
+                        <div id="pie-chart"></div>
+                    </div>
+
+                    <!-- marks information in tabular format -->
+                    <div id="marks-info">
+                        <div>
+                            <span class="performance-title"> Quiz Taker </span>
+                            <span class="colon"> : </span>
+                            <span class="performance"> John Doe </span>
+                        </div>
+                        <div>
+                            <span class="performance-title"> Quiz Type </span>
+                            <span class="colon"> : </span>
+                            <span class="performance"> English Grammar </span>
+                        </div>
+                        <div>
+                            <span class="performance-title"> Questions </span>
+                            <span class="colon"> : </span>
+                            <span class="performance"> 20 </span>
+                        </div>
+                        <div>
+                            <span class="performance-title"> Correct </span>
+                            <span class="colon"> : </span>
+                            <span class="performance"> 07 </span>
+                        </div>
+                        <div>
+                            <span class="performance-title"> Incorrect </span>
+                            <span class="colon"> : </span>
+                            <span class="performance"> 07 </span>
+                        </div>
+                        <div>
+                            <span class="performance-title"> Skipped </span>
+                            <span class="colon"> : </span>
+                            <span class="performance"> 06 </span>
+                        </div>
+                        <div>
+                            <span class="performance-title"> Accuracy </span>
+                            <span class="colon"> : </span>
+                            <span class="performance"> 82% </span>
+                        </div>
+                        <div>
+                            <span class="performance-title"> Percentage </span>
+                            <span class="colon"> : </span>
+                            <span class="performance"> 66% </span>
+                        </div>
+                        <div>
+                            <span class="performance-title"> Remarks </span>
+                            <span class="colon"> : </span>
+                            <span class="performance"> lmao </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="go-to-home" class="temp">
+                Go home
+                <i class="fa-solid fa-house-chimney"></i>
+            </button>
+        </section>
+    </main>
+
+    <!-- footer to hold necessary links -->
+    <footer>
+        <div class="footer-links">
+            <div>
+                <a class="links">
+                    Copyright 2023 &copy; Quizee Inc, All rights reserved
+                </a>
+            </div>
+
+            <div id="middle-link">
+                <a class="links"> Terms & Conditions </a>
+                <a class="links"> Privacy Policy </a>
+                <a class="links"> Security Policy </a>
+                <a class="links"> Accessibility </a>
+                <a class="links"> Send Feedback </a>
+            </div>
+
+            <div>
+                Made with <i class="fa-solid fa-heart"></i> by <a href="https://github.com/psycoder69" target="_blank" id="creator"> Anshu Kumar Singh </a>
+            </div>
+        </div>
+
+        <!-- <div id="social-links">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-google"></i>
+            <i class="fa-brands fa-pinterest-p"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-solid fa-paper-plane"></i>
+            <i class="fa-brands fa-discord"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
+        </div> -->
+    </footer>
+
+    <script src="../javascript/header.js"></script>
+    <script src="../javascript/aptitude.js"></script>
+    <script src="../javascript/reasoning.js"></script>
+    <script src="../javascript/knowledge.js"></script>
+    <script src="../javascript/grammar.js"></script>
+    <script src="../javascript/index.js"></script>
+    <script src="../javascript/question.js"></script>
+    <script src="../javascript/result.js"></script>
+    <script src="../javascript/footer.js"></script>
+</body>
+</html>
